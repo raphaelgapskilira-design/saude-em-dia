@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde em Dia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f7f4;
+            margin: 0;
+            padding: 30px;
+            color: #263b32;
+        }
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+        h1 { color: #16845b; }
+        input, select, button {
+            padding: 12px;
+            margin: 8px 0 18px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background: #16845b;
+            color: white;
+            border: 0;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        a { color: #16845b; }
+        .resultado {
+            background: #e8f5ee;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Saúde em Dia</h1>
+    <p>Cuide dos seus hábitos e acompanhe seu progresso!</p>
+
+    <p>
+        <a href="/cadastro">Criar conta</a> |
+        <a href="/login">Entrar</a>
+    </p>
+
+    <h2>Avaliação de hábitos</h2>
+
+    <form method="POST">
+        <label>Como está seu sono?</label>
+        <select name="sono" required>
+            <option value="bom">Bom</option>
+            <option value="ruim">Pode melhorar</option>
+        </select>
+
+        <label>Você pratica atividade física?</label>
+        <select name="atividade" required>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <label>Como está sua alimentação?</label>
+        <select name="alimentacao" required>
+            <option value="boa">Variada</option>
+            <option value="ruim">Precisa melhorar</option>
+        </select>
+
+        <label>Você mantém uma boa hidratação?</label>
+        <select name="agua" required>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <button type="submit">Ver meus resultados</button>
+    </form>
+
+    {% if resultados %}
+        <h2>Resultado dos hábitos</h2>
+        {% for resultado in resultados %}
+            <div class="resultado">
+                <h3>{{ resultado.titulo }} — {{ resultado.status }}</h3>
+                <p>{{ resultado.mensagem }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+</body>
+</html>

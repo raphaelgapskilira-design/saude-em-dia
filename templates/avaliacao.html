@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova avaliação | Saúde em Dia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f7f4;
+            padding: 30px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        h1 { color: #16845b; }
+        select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px;
+        }
+        button {
+            background: #16845b;
+            color: white;
+            border: 0;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Nova avaliação</h1>
+
+    <form method="POST">
+        <label>Como está seu sono?</label>
+        <select name="sono" required>
+            <option value="bom">Bom</option>
+            <option value="ruim">Pode melhorar</option>
+        </select>
+
+        <label>Pratica atividade física?</label>
+        <select name="atividade" required>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <label>Como está sua alimentação?</label>
+        <select name="alimentacao" required>
+            <option value="boa">Variada</option>
+            <option value="ruim">Pode melhorar</option>
+        </select>
+
+        <label>Mantém uma boa hidratação?</label>
+        <select name="agua" required>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <button type="submit">Salvar avaliação</button>
+    </form>
+
+    <a href="/painel">Voltar ao painel</a>
+</div>
+</body>
+</html>

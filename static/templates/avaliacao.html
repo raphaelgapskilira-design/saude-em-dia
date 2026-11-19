@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova avaliação - Saúde em Dia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef5f2;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #087f5b;
+            color: white;
+            padding: 25px;
+        }
+
+        main {
+            background: white;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        select {
+            width: 90%;
+            padding: 12px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+        }
+
+        button, a {
+            display: inline-block;
+            background: #087f5b;
+            color: white;
+            padding: 13px 22px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Saúde em Dia</h1>
+    <p>Registro de hábitos</p>
+</header>
+
+<main>
+    <h2>Nova avaliação</h2>
+    <p>Responda às perguntas sobre sua rotina.</p>
+
+    <form method="POST">
+
+        <p>Como você avalia seu sono?</p>
+        <select name="sono" required>
+            <option value="bom">Bom</option>
+            <option value="melhorar">Pode melhorar</option>
+        </select>
+
+        <p>Você pratica atividades físicas?</p>
+        <select name="atividade" required>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <p>Como você avalia sua alimentação?</p>
+        <select name="alimentacao" required>
+            <option value="boa">Variada</option>
+            <option value="melhorar">Quero melhorar</option>
+        </select>
+
+        <p>Você costuma beber água durante o dia?</p>
+        <select name="agua" required>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <br>
+
+        <button type="submit">Salvar avaliação</button>
+    </form>
+
+    <a href="/painel">Voltar ao painel</a>
+</main>
+
+</body>
+</html>

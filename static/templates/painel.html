@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel - Saúde em Dia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef5f2;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #087f5b;
+            color: white;
+            padding: 25px;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px #00000010;
+        }
+
+        a {
+            display: inline-block;
+            background: #087f5b;
+            color: white;
+            padding: 14px 22px;
+            margin: 8px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .sair {
+            background: #b83232;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Saúde em Dia</h1>
+    <p>Seu espaço de acompanhamento de hábitos</p>
+</header>
+
+<main>
+
+    <div class="card">
+        <h2>Olá, {{ nome }}!</h2>
+        <p>Bem-vindo ao seu painel pessoal.</p>
+        <p>Acompanhe seus hábitos e registre sua evolução.</p>
+    </div>
+
+    <div class="card">
+        <h2>Minha rotina</h2>
+        <p>Registre informações sobre seus hábitos.</p>
+        <a href="/avaliacao">Nova avaliação</a>
+    </div>
+
+    <div class="card">
+        <h2>Meu histórico</h2>
+        <p>Consulte suas avaliações anteriores.</p>
+        <a href="/historico">Ver histórico</a>
+    </div>
+
+    <div class="card">
+        <h2>Minha conta</h2>
+        <a href="/sair" class="sair">Sair da conta</a>
+    </div>
+
+</main>
+
+</body>
+</html>

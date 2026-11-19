@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico | Saúde em Dia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f7f4;
+            padding: 30px;
+            color: #263b32;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: #16845b;
+        }
+
+        .avaliacao {
+            background: #e8f5ee;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #16845b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Meu histórico</h1>
+        <p>Aqui estão suas avaliações registradas.</p>
+
+        {% if avaliacoes %}
+
+            {% for avaliacao in avaliacoes %}
+
+                <div class="avaliacao">
+                    <h3>Avaliação {{ loop.index }}</h3>
+
+                    <p><strong>Sono:</strong> {{ avaliacao.sono }}</p>
+
+                    <p><strong>Atividade física:</strong>
+                        {{ avaliacao.atividade }}
+                    </p>
+
+                    <p><strong>Alimentação:</strong>
+                        {{ avaliacao.alimentacao }}
+                    </p>
+
+                    <p><strong>Hidratação:</strong>
+                        {{ avaliacao.agua }}
+                    </p>
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>Você ainda não possui avaliações registradas.</p>
+
+        {% endif %}
+
+        <a href="/painel">Voltar ao painel</a>
+
+    </div>
+</body>
+</html>
